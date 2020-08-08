@@ -5,6 +5,11 @@
     <title>Student</title>
 </head>
 <body>
-    
+    <?php 
+        include("student-data.php");
+        $data = mysqli_fetch_object($result)
+    ?>
+
+    <h1><?= $data->vorname ?></h1>
 </body>
 </html>

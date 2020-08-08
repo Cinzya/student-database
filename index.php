@@ -13,11 +13,12 @@
             <div class="row">
             <?php 
                 include("student-data.php");
+                print_r($_POST);
             ?>
 
                 <form action="" method="POST">
                     <div class="col-md-6"><input type="text" name="search" class="form-control"></div>
-                    <div class="col-md-3"><button class="btn btn-primary" name="search">Suchen</button> </div>
+                    <div class="col-md-3"><button type="submit" class="btn btn-primary">Suchen</button></div>
                 </form>
                 <div class="col-md-3"><button class="btn btn-primary" name="add">Student hinzufügen</button></div>  
             </div>
@@ -25,7 +26,6 @@
         <table class="table">
         <thead>
             <tr>
-            <th scope="col">#</th>
             <th scope="col">Vorname</th>
             <th scope="col">Nachname</th>
             <th scope="col">Studiengang</th>
@@ -36,10 +36,10 @@
         <tbody>
         <?php while($row = mysqli_fetch_object($result)) { ?>
             <tr>
-            <th scope="row"><?php echo $row->nachname ?></th>
-            <td><?php echo $row->vorname ?></td>
-            <td><?php echo $row->studiengang ?></td>
-            <td><?php echo $row->geburtsdatum ?></td>
+            <td><a href="student.php?id=<?= $row->id ?>"><?= $row->vorname ?></a></td>
+            <td><?= $row->nachname ?></td>
+            <td><?= $row->studiengang ?></td>
+            <td><?= $row->geburtsdatum ?></td>
             </tr>
         <?php } ?>
         </tbody>
