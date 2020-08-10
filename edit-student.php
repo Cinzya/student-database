@@ -10,15 +10,20 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="icon" type="image/ico" href="img/favicon.ico">
 
-    <title><?= $data->first_name ?> <?= $data->last_name ?></title>
+    <title>Bearbeite: <?= $data->first_name ?> <?= $data->last_name ?></title>
 </head>
 <body>
 
 
     <div class="container student">
-        <a href="index.php">Zurück</a><h1><?= $data->first_name ?> <?= $data->last_name ?></h1>
+        <a href="index.php">Zurück</a>
+
+        <h1>Bearbeite: <?= $data->first_name ?> <?= $data->last_name ?></h1>
+
+        <form action="" method="POST">
 <div class=".col-md-4 foto">
-        <img src=<?= "data:image/jpeg;base64,'.base64_encode($data->photo)'"?> alt="">
+        <img src="img\profile-dummy-250x250.png" alt="" width="250px" height="250px">
+        <input type="file" name="fileToUpload" id="fileToUpload">
         </div>
         <div class=".col-md-8">
         <table class="table">
@@ -26,43 +31,48 @@
         </thead>
             <tbody>
                 <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="new_first_name" value="<?= $data->first_name ?>"> <input type="text" name="last_name" id="" value="<?= $data->last_name ?>"></td>
+                </tr>
+                <tr>
                     <td>Studiengang:</td>
-                    <td><?= $data->major ?></td>
+                    <td><input type="text" name="new_major" value="<?= $data->major ?>"></td>
                 </tr>
                 <tr>
                     <td>Semester:</td>
-                    <td><?= $data->semester ?></td>
+                    <td><input type="number" name="new_semester" value="<?= $data->semester ?>"></td>
                 </tr>
                 <tr>
                     <td>Martrikelnummer:</td>
-                    <td><?= $data->studentnr ?></td>
+                    <td><input type="number" name="new_studentnr"  value="<?= $data->studentnr ?>"></td>
                 </tr>
                 <tr>
                     <td>E-Mail:</td>
-                    <td><?= $data->email ?></td>
+                    <td><input type="text" name="new_email"  value="<?= $data->email ?>"></td>
                 </tr>
                 <tr>
                     <td>Adresse:</td>
-                    <td><?= $data->street ?> <?= $data->streetnr ?></td>
+                    <td><input type="text" name="new_street"  value="<?= $data->street ?>"> <input type="number" name="streetnr" value="<?= $data->streetnr ?>"></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><?= $data->city ?></td>
+                    <td><input type="text" name="new_city"  value="<?= $data->city ?>"></td>
                 </tr>
                 <tr>
                     <td>Telefon:</td>
-                    <td><?= $data->tel ?></td>
+                    <td><input type="text" name="new_tel" id=""  value="<?= $data->tel ?>"></td>
                 </tr>
                 <tr>
                     <td>Geburtsdatum:</td>
-                    <td><?= $data->birthday ?></td>
+                    <td><input type="date" name="new_birthday" value="<?= $data->birthday ?>"></td>
                 </tr>
                 <tr>
-                    <td><a href="edit-student.php?id=<?= $data->id ?>" class="btn btn-primary">Bearbeiten</a></td>
                     <td></td>
+                    <td><input type="submit" value="Speichern" name="edit" class="btn btn-primary"></td>
                 </tr>
             </tbody>
         </table>
+        </form>
         </div>
     </div>
     

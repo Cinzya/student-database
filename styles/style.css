@@ -1,0 +1,12 @@
+.view {
+  height: 20px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+button a {
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
