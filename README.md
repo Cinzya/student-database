@@ -1,5 +1,5 @@
 # student-database
-A small database that holds information about currently enrolled students at HS-Ansbach.
+A small database that holds information about enrolled students.
 
 ## How to Use
 ### Sorting & seaching within the table
